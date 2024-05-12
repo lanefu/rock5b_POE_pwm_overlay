@@ -1,16 +1,16 @@
-# rockpi4_pwm_overlay
-rockpi 4 pwm overlay code
+# rock5b 25W POE HAT PWM Overlay
+rock 5B POE HAT pwm overlay code
 
 to create pwm overlay call : 
 
-    dtc -O dtb -o rockchip-pwm-gpio.dtbo -b 0 -@ rockchip-pwm-gpio.dts
+    dtc -O dtb -o rockchip-rk3588-pwm8-m0.dtbo -b 0 -@ rk3588-pwm8-m0.dts
 
 and move dtbo to /boot/dtc/rockchip/overlays
 
 to activate overlay, modify /boot/armbianEnv.txt by adding: 
 
-    overlay_prefix=rockchip
-    overlays=pwm-gpio
+    overlay_prefix=rockchip-rk3588
+    overlays=pwm8-m0
   
 before PWM can be used, it should be initialized by calling 
 
